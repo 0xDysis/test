@@ -142,3 +142,21 @@ function keyShift(key, word) {
 
     return output.join(' ');
 }
+
+
+appSelector.addEventListener('change', (e) => {
+    calculatorApp.style.display = 'none';
+    converterApp.style.display = 'none';
+    cipherApp.style.display = 'none';
+    keyshiftApp.style.display = 'none';
+
+    if (e.target.value === 'calculator') {
+        calculatorApp.style.display = 'block';
+    } else if (e.target.value === 'converter') {
+        converterApp.style.display = 'block';
+    } else if (e.target.value === 'cipher') {
+        cipherApp.style.display = 'block';
+    } else {
+        keyshiftApp.style.display = 'block';
+    }
+});

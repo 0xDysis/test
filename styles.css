@@ -1,6 +1,33 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #000000, #434343);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+#app-selector {
+    font-size: 20px;
+    padding: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 5px;
+
+}
+
+.app {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
 #calculator {
     width: 200px;
-    margin: 0 auto;
+    margin: 20px;
 }
 
 #result {
@@ -20,7 +47,11 @@
 button {
     height: 50px;
     font-size: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 5px;
 }
+
 .app {
     margin-top: 20px;
 }
