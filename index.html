@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Calculator</title>
+    <title>App Selector</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    <select id="app-selector">
+        <option value="calculator">Calculator</option>
+        <option value="converter">Text to Hex Converter</option>
+        <option value="cipher">A1Z26 Cipher</option>
+    </select>
+
+
+    <div id="calculator" class="app">
+        
     <div id="calculator">
         <input id="result" type="text" >
         <div id="buttons">
@@ -24,6 +33,20 @@
             <button id="clear">C</button>
             <button id="equals">=</button>
         </div>
+    </div>
+    
+
+    </div>
+
+    <div id="converter" class="app" style="display: none;">
+        <input id="text-input" type="text" placeholder="Enter text">
+        <button id="convert">Convert to Hex</button>
+        <input id="hex-output" type="text" readonly>
+    </div>
+    <div id="cipher" class="app" style="display: none;">
+        <input id="cipher-input" type="text" placeholder="Enter text">
+        <button id="encode">Encode</button>
+        <input id="cipher-output" type="text" readonly>
     </div>
     <script src="script.js"></script>
 </body>
