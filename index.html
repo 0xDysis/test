@@ -9,6 +9,7 @@
         <option value="calculator">Calculator</option>
         <option value="converter">Text to Hex Converter</option>
         <option value="cipher">A1Z26 Cipher</option>
+        <option value="keyshift">A1Z26 Key Shift</option>
     </select>
 
 
@@ -47,6 +48,12 @@
         <input id="cipher-input" type="text" placeholder="Enter text">
         <button id="encode">Encode</button>
         <input id="cipher-output" type="text" readonly>
+    </div>
+    <div id="keyshift" class="app" style="display: none;">
+        <input id="key-input" type="text" placeholder="Enter key">
+        <input id="word-input" type="text" placeholder="Enter word">
+        <button id="shift">Shift</button>
+        <input id="shift-output" type="text" readonly>
     </div>
     <script src="script.js"></script>
 </body>

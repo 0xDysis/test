@@ -94,3 +94,51 @@ function encodeA1Z26(text) {
     }
     return encoded.trim();
 }
+// Existing JavaScript here
+
+appSelector.addEventListener('change', (e) => {
+    if (e.target.value === 'calculator') {
+        calculatorApp.style.display = 'block';
+        converterApp.style.display = 'none';
+        cipherApp.style.display = 'none';
+        keyshiftApp.style.display = 'none';
+    } else if (e.target.value === 'converter') {
+        calculatorApp.style.display = 'none';
+        converterApp.style.display = 'block';
+        cipherApp.style.display = 'none';
+        keyshiftApp.style.display = 'none';
+    } else if (e.target.value === 'cipher') {
+        calculatorApp.style.display = 'none';
+        converterApp.style.display = 'none';
+        cipherApp.style.display = 'block';
+        keyshiftApp.style.display = 'none';
+    } else {
+        calculatorApp.style.display = 'none';
+        converterApp.style.display = 'none';
+        cipherApp.style.display = 'none';
+        keyshiftApp.style.display = 'block';
+    }
+});
+
+let keyshiftApp = document.getElementById('keyshift');
+let keyInput = document.getElementById('key-input');
+let wordInput = document.getElementById('word-input');
+let shiftButton = document.getElementById('shift');
+let shiftOutput = document.getElementById('shift-output');
+
+shiftButton.addEventListener('click', () => {
+    shiftOutput.value = keyShift(keyInput.value, wordInput.value);
+});
+
+function keyShift(key, word) {
+    let keyA1Z26 = encodeA1Z26(key).split(' ').map(Number);
+    let wordA1Z26 = encodeA1Z26(word).split(' ').map(Number);
+    let output = [];
+
+    for (let i = 0; i < Math.max(keyA1Z26.length, wordA1Z26.length); i++) {
+        let sum = (keyA1Z26[i % keyA1Z26.length] + wordA1Z26[i % wordA1Z26.length]) % 26;
+        output.push(sum === 0 ? 26 : sum);
+    }
+
+    return output.join(' ');
+}
